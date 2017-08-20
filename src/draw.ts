@@ -37,12 +37,8 @@ export function drawGrid (
 ): void {
 	ctx.save();
 	ctx.translate(0.5, 0.5);
-	// Horizontal
 	ctx.beginPath();
 	drawLinesHorizontal(ctx, x, y, size, steps);
-	ctx.stroke();
-	// Vertical
-	ctx.beginPath();
 	drawLinesVertical(ctx, x, y, size, steps);
 	ctx.stroke();
 	ctx.restore();
