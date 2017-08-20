@@ -43,3 +43,28 @@ export function drawGrid (
 	ctx.stroke();
 	ctx.restore();
 }
+
+export function drawCurve (
+	ctx: CanvasRenderingContext2D,
+	x: number,
+	y: number,
+	size: number,
+	cp1x: number,
+	cp1y: number,
+	cp2x: number,
+	cp2y: number,
+): void {
+	ctx.save();
+	ctx.beginPath();
+	ctx.moveTo(x, y + size);
+	ctx.bezierCurveTo(
+		x + cp1x * size,
+		y + (1 - cp1y) * size,
+		x + cp2x * size,
+		y + (1 - cp2y) * size,
+		x + size,
+		y,
+	);
+	ctx.stroke();
+	ctx.restore();
+}

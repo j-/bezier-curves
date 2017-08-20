@@ -1,11 +1,15 @@
 import * as React from 'react';
-import { drawGrid } from './draw';
+import { drawGrid, drawCurve } from './draw';
 import './App.css';
 
 const logo = require('./logo.svg');
 
-const offset = 0;
-const size = 1000;
+const offset = 100;
+const size = 800;
+const cp1x = 0.5;
+const cp1y = 0;
+const cp2x = 0.5;
+const cp2y = 1;
 const canvas = document.createElement('canvas');
 canvas.width = offset * 2 + size + 1;
 canvas.height = offset * 2 + size + 1;
@@ -14,6 +18,9 @@ ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
 drawGrid(ctx, offset, offset, size, 20);
 ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
 drawGrid(ctx, offset, offset, size, 10);
+ctx.strokeStyle = '#09c';
+ctx.lineWidth = 2;
+drawCurve(ctx, offset, offset, size, cp1x, cp1y, cp2x, cp2y);
 
 class App extends React.Component {
 	private canvasContainer: HTMLElement;
