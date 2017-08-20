@@ -8,7 +8,10 @@ const canvas = document.createElement('canvas');
 canvas.width = 1001;
 canvas.height = 1001;
 const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
-drawGrid(ctx, 0, 0, 1000);
+ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+drawGrid(ctx, 0, 0, 1000, 20);
+ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
+drawGrid(ctx, 0, 0, 1000, 10);
 
 class App extends React.Component {
 	private canvasContainer: HTMLElement;

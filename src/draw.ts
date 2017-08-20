@@ -33,30 +33,17 @@ export function drawGrid (
 	x: number,
 	y: number,
 	size: number,
+	steps: number,
 ): void {
-	const stepsMajor = 10;
-	const stepsMinor = stepsMajor * 2;
 	ctx.save();
 	ctx.translate(0.5, 0.5);
-	// Minor style
-	ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
-	// Minor horizontal
+	// Horizontal
 	ctx.beginPath();
-	drawLinesHorizontal(ctx, x, y, size, stepsMinor);
+	drawLinesHorizontal(ctx, x, y, size, steps);
 	ctx.stroke();
-	// Minor vertical
+	// Vertical
 	ctx.beginPath();
-	drawLinesVertical(ctx, x, y, size, stepsMinor);
-	ctx.stroke();
-	// Major style
-	ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
-	// Major horizontal
-	ctx.beginPath();
-	drawLinesHorizontal(ctx, x, y, size, stepsMajor);
-	ctx.stroke();
-	// Major vertical
-	ctx.beginPath();
-	drawLinesVertical(ctx, x, y, size, stepsMajor);
+	drawLinesVertical(ctx, x, y, size, steps);
 	ctx.stroke();
 	ctx.restore();
 }
