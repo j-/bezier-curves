@@ -1,0 +1,17 @@
+.CurveContainer {
+	position: relative;
+}
+
+.CurveContainer > .Curve {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.CurveContainer > .Grid {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
