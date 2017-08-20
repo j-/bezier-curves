@@ -7,6 +7,7 @@
     "@types/node": "^8.0.24",
     "@types/react": "^16.0.2",
     "@types/react-dom": "^15.5.3",
+    "gh-pages": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts-ts": "2.6.0"
@@ -15,6 +16,26 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
-  }
+    "eject": "react-scripts-ts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "description": "Visualize and manipulate cubic Bézier curves",
+  "main": "index.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-/bezier-curves.git"
+  },
+  "keywords": [
+    "cubic",
+    "control",
+    "point"
+  ],
+  "author": "Jamie Hoeks <j@skeoh.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/j-/bezier-curves/issues"
+  },
+  "homepage": "https://skeoh.com/bezier-curves"
 }
