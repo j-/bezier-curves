@@ -4,14 +4,16 @@ import './App.css';
 
 const logo = require('./logo.svg');
 
+const offset = 0;
+const size = 1000;
 const canvas = document.createElement('canvas');
-canvas.width = 1001;
-canvas.height = 1001;
+canvas.width = offset * 2 + size + 1;
+canvas.height = offset * 2 + size + 1;
 const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
-drawGrid(ctx, 0, 0, 1000, 20);
+drawGrid(ctx, offset, offset, size, 20);
 ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
-drawGrid(ctx, 0, 0, 1000, 10);
+drawGrid(ctx, offset, offset, size, 10);
 
 class App extends React.Component {
 	private canvasContainer: HTMLElement;
