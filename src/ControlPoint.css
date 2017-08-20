@@ -1,0 +1,10 @@
+.ControlPoint {
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	border: 2px solid #09c;
+	background-color: #2be;
+	cursor: -webkit-grab;
+	cursor: grab;
+	transform: translate(-1em, -1em);
+}

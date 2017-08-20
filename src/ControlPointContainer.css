@@ -1,0 +1,8 @@
+.ControlPointContainer {
+	width: 0;
+	height: 0;
+}
+
+.ControlPointContainer > .ControlPoint {
+	position: absolute;
+}
