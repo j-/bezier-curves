@@ -1,8 +1,10 @@
 .ControlPointContainer {
 	width: 0;
 	height: 0;
+	pointer-events: none;
 }
 
 .ControlPointContainer > .ControlPoint {
 	position: absolute;
+	pointer-events: all;
 }
