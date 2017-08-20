@@ -3,6 +3,7 @@ import { drawCurve } from './draw';
 
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	size: number;
+	offset: number;
 	cp1x: number;
 	cp1y: number;
 	cp2x: number;
@@ -30,11 +31,11 @@ class Curve extends React.Component<Props> {
 	}
 
 	render () {
-		const { size, cp1x, cp1y, cp2x, cp2y, ...props } = this.props;
+		const { size, offset, cp1x, cp1y, cp2x, cp2y, ...props } = this.props;
 		return (
 			<div
 				className="Curve"
-				style={{ width: size + 1, height: size + 1 }}
+				style={{ width: size + offset * 2, height: size + offset * 2 }}
 				ref={this.setCanvasContainerRef}
 				{...props}
 			/>
@@ -46,10 +47,9 @@ class Curve extends React.Component<Props> {
 	)
 
 	private drawCurve = () => {
-		const offset = 0;
-		const { size, cp1x, cp1y, cp2x, cp2y } = this.props;
-		this.canvas.width = size + 1;
-		this.canvas.height = size + 1;
+		const { size, offset, cp1x, cp1y, cp2x, cp2y } = this.props;
+		this.canvas.width = size + offset * 2;
+		this.canvas.height = size + offset * 2;
 		this.ctx.strokeStyle = '#09c';
 		this.ctx.lineWidth = 2;
 		drawCurve(this.ctx, offset, offset, size, cp1x, cp1y, cp2x, cp2y);

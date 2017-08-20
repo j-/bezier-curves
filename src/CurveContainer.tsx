@@ -14,10 +14,11 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 class CurveContainer extends React.Component<Props> {
 	render () {
 		const { size, cp1x, cp1y, cp2x, cp2y, ...props } = this.props;
+		const offset = 200;
 		return (
 			<div className="CurveContainer" style={{ width: size + 1, height: size + 1 }} {...props}>
 				<Grid size={size} />
-				<Curve size={size} cp1x={cp1x} cp1y={cp1y} cp2x={cp2x} cp2y={cp2y} />
+				<Curve size={size} offset={offset} cp1x={cp1x} cp1y={cp1y} cp2x={cp2x} cp2y={cp2y} />
 			</div>
 		);
 	}

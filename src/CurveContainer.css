@@ -4,8 +4,9 @@
 
 .CurveContainer > .Curve {
 	position: absolute;
-	top: 0;
-	left: 0;
+	/* `top` and `left` values must match Curve component's `offset` prop multiplied by negative 1 */
+	top: -200px;
+	left: -200px;
 	z-index: 1;
 }
 
