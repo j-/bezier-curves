@@ -9,7 +9,7 @@ export default class App extends React.Component {
 		return (
 			<div className="App">
 				<div className="App-canvas-container">
-					<CurveContainer size={1000} />
+					<CurveContainer size={400} />
 				</div>
 				<div className="App-control-point-values">
 					<ControlPointValues />
