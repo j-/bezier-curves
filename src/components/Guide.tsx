@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { drawCurve } from '../draw';
 
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	size: number;
@@ -10,7 +9,7 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	cp2y: number;
 }
 
-class Curve extends React.Component<Props> {
+export default class Guide extends React.Component<Props> {
 	private canvasContainer: HTMLElement;
 	private canvas: HTMLCanvasElement;
 	private ctx: CanvasRenderingContext2D;
@@ -22,19 +21,19 @@ class Curve extends React.Component<Props> {
 	}
 
 	componentDidMount () {
-		this.drawCurve();
+		this.drawGuide();
 		this.canvasContainer.appendChild(this.canvas);
 	}
 
 	componentDidUpdate () {
-		this.drawCurve();
+		this.drawGuide();
 	}
 
 	render () {
 		const { size, offset, cp1x, cp1y, cp2x, cp2y, ...props } = this.props;
 		return (
 			<div
-				className="Curve"
+				className="Guide"
 				style={{ width: size + offset * 2, height: size + offset * 2 }}
 				ref={this.setCanvasContainerRef}
 				{...props}
@@ -46,14 +45,21 @@ class Curve extends React.Component<Props> {
 		this.canvasContainer = el as HTMLElement
 	)
 
-	private drawCurve = () => {
+	private drawGuide = () => {
 		const { size, offset, cp1x, cp1y, cp2x, cp2y } = this.props;
-		this.canvas.width = size + offset * 2;
-		this.canvas.height = size + offset * 2;
-		this.ctx.strokeStyle = '#09c';
-		this.ctx.lineWidth = 5;
-		drawCurve(this.ctx, offset, offset, size, cp1x, cp1y, cp2x, cp2y);
+		const { canvas, ctx } = this;
+		canvas.width = size + offset * 2;
+		canvas.height = size + offset * 2;
+		ctx.save();
+		ctx.beginPath();
+		ctx.setLineDash([10, 5]);
+		ctx.strokeStyle = 'rgba(0, 0, 0, 0.4)';
+		ctx.lineWidth = 2;
+		ctx.moveTo(offset, offset + size);
+		ctx.lineTo(offset + cp1x * size, offset + (1 - cp1y) * size);
+		ctx.lineTo(offset + cp2x * size, offset + (1 - cp2y) * size);
+		ctx.lineTo(offset + size, offset);
+		ctx.stroke();
+		ctx.restore();
 	}
 }
-
-export default Curve;

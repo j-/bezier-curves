@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Grid from './Grid';
 import Curve from './Curve';
+import Guide from './Guide';
 import ControlPointContainer from './ControlPointContainer';
 import './CurveContainer.css';
 
@@ -19,6 +20,7 @@ class CurveContainer extends React.Component<Props> {
 		return (
 			<div className="CurveContainer" style={{ width: size + 1, height: size + 1 }} {...props}>
 				<Grid size={size} />
+				<Guide size={size} offset={offset} cp1x={cp1x} cp1y={cp1y} cp2x={cp2x} cp2y={cp2y} />
 				<Curve size={size} offset={offset} cp1x={cp1x} cp1y={cp1y} cp2x={cp2x} cp2y={cp2y} />
 				<ControlPointContainer size={size} x={cp1x} y={cp1y} />
 				<ControlPointContainer size={size} x={cp2x} y={cp2y} />
