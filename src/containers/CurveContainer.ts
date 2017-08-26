@@ -23,6 +23,15 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 	cp2y: getCp2y(state),
 });
 
+interface DispatchProps {
+
+}
+
+const mapDispatchToProps: DispatchProps = ({
+
+});
+
 export default connect(
 	mapStateToProps,
+	mapDispatchToProps,
 )(CurveContainer);
