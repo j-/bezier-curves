@@ -53,7 +53,7 @@ export default class Guide extends React.Component<Props> {
 		ctx.save();
 		ctx.beginPath();
 		ctx.setLineDash([10, 5]);
-		ctx.strokeStyle = 'rgba(0, 0, 0, 0.4)';
+		ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)';
 		ctx.lineWidth = 2;
 		ctx.moveTo(offset, offset + size);
 		ctx.lineTo(offset + cp1x * size, offset + (1 - cp1y) * size);

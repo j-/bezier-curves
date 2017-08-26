@@ -50,7 +50,7 @@ class Curve extends React.Component<Props> {
 		const { size, offset, cp1x, cp1y, cp2x, cp2y } = this.props;
 		this.canvas.width = size + offset * 2;
 		this.canvas.height = size + offset * 2;
-		this.ctx.strokeStyle = '#09c';
+		this.ctx.strokeStyle = 'hsl(200, 100%, 40%)';
 		this.ctx.lineWidth = 5;
 		drawCurve(this.ctx, offset, offset, size, cp1x, cp1y, cp2x, cp2y);
 	}

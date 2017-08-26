@@ -47,10 +47,10 @@ class Grid extends React.Component<Props> {
 		this.canvas.width = size + 1;
 		this.canvas.height = size + 1;
 		// Minor grid lines
-		this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+		this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.05)';
 		drawGrid(this.ctx, offset, offset, size, 20);
 		// Major grid lines
-		this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
+		this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.15)';
 		drawGrid(this.ctx, offset, offset, size, 10);
 	}
 }
