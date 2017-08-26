@@ -2,7 +2,8 @@
 	padding: 1em;
 }
 
-.App-canvas-container {
+.App-canvas-container,
+.App-control-point-values {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;

@@ -1,0 +1,19 @@
+.ControlPointValues {
+	font-size: 1.5em;
+}
+
+.ControlPointValues > .ControlPointValues-config {
+	padding: 0.25em;
+	margin: 0.25em;
+}
+
+.ControlPointValues > .ControlPointValues-config > .ControlPointValues-config-label {
+	line-height: 2em;
+	padding: 0 0.5em;
+}
+
+.ControlPointValues > .ControlPointValues-config > .ControlPointValues-config-value {
+	font-size: inherit;
+	line-height: 2em;
+	padding: 0 0.5em;
+}
