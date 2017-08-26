@@ -1,11 +1,16 @@
 import * as React from 'react';
-import { drawGrid } from './draw';
+import { drawCurve } from '../draw';
 
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	size: number;
+	offset: number;
+	cp1x: number;
+	cp1y: number;
+	cp2x: number;
+	cp2y: number;
 }
 
-class Grid extends React.Component<Props> {
+class Curve extends React.Component<Props> {
 	private canvasContainer: HTMLElement;
 	private canvas: HTMLCanvasElement;
 	private ctx: CanvasRenderingContext2D;
@@ -17,20 +22,20 @@ class Grid extends React.Component<Props> {
 	}
 
 	componentDidMount () {
-		this.drawGrid();
+		this.drawCurve();
 		this.canvasContainer.appendChild(this.canvas);
 	}
 
 	componentDidUpdate () {
-		this.drawGrid();
+		this.drawCurve();
 	}
 
 	render () {
-		const { size, ...props } = this.props;
+		const { size, offset, cp1x, cp1y, cp2x, cp2y, ...props } = this.props;
 		return (
 			<div
-				className="Grid"
-				style={{ width: size + 1, height: size + 1 }}
+				className="Curve"
+				style={{ width: size + offset * 2, height: size + offset * 2 }}
 				ref={this.setCanvasContainerRef}
 				{...props}
 			/>
@@ -41,18 +46,14 @@ class Grid extends React.Component<Props> {
 		this.canvasContainer = el as HTMLElement
 	)
 
-	private drawGrid = () => {
-		const offset = 0;
-		const { size } = this.props;
-		this.canvas.width = size + 1;
-		this.canvas.height = size + 1;
-		// Minor grid lines
-		this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
-		drawGrid(this.ctx, offset, offset, size, 20);
-		// Major grid lines
-		this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
-		drawGrid(this.ctx, offset, offset, size, 10);
+	private drawCurve = () => {
+		const { size, offset, cp1x, cp1y, cp2x, cp2y } = this.props;
+		this.canvas.width = size + offset * 2;
+		this.canvas.height = size + offset * 2;
+		this.ctx.strokeStyle = '#09c';
+		this.ctx.lineWidth = 2;
+		drawCurve(this.ctx, offset, offset, size, cp1x, cp1y, cp2x, cp2y);
 	}
 }
 
-export default Grid;
+export default Curve;

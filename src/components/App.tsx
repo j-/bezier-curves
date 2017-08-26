@@ -1,5 +1,5 @@
 import * as React from 'react';
-import CurveContainer from './CurveContainer';
+import CurveContainer from '../containers/CurveContainer';
 import './App.css';
 
 class App extends React.Component {
@@ -7,7 +7,7 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<div className="App-canvas-container">
-					<CurveContainer size={1000} cp1x={0.5} cp1y={0} cp2x={0.5} cp2y={1} />
+					<CurveContainer size={1000} />
 				</div>
 			</div>
 		);
