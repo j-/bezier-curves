@@ -5,7 +5,7 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	size: number;
 }
 
-class Grid extends React.Component<Props> {
+export default class Grid extends React.Component<Props> {
 	private canvasContainer: HTMLElement;
 	private canvas: HTMLCanvasElement;
 	private ctx: CanvasRenderingContext2D;
@@ -54,5 +54,3 @@ class Grid extends React.Component<Props> {
 		drawGrid(this.ctx, offset, offset, size, 10);
 	}
 }
-
-export default Grid;

@@ -13,7 +13,7 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	cp2y: number;
 }
 
-class CurveContainer extends React.Component<Props> {
+export default class CurveContainer extends React.Component<Props> {
 	render () {
 		const { size, cp1x, cp1y, cp2x, cp2y, ...props } = this.props;
 		const offset = 200;
@@ -28,5 +28,3 @@ class CurveContainer extends React.Component<Props> {
 		);
 	}
 }
-
-export default CurveContainer;

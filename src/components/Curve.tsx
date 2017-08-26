@@ -10,7 +10,7 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	cp2y: number;
 }
 
-class Curve extends React.Component<Props> {
+export default class Curve extends React.Component<Props> {
 	private canvasContainer: HTMLElement;
 	private canvas: HTMLCanvasElement;
 	private ctx: CanvasRenderingContext2D;
@@ -55,5 +55,3 @@ class Curve extends React.Component<Props> {
 		drawCurve(this.ctx, offset, offset, size, cp1x, cp1y, cp2x, cp2y);
 	}
 }
-
-export default Curve;
