@@ -1,5 +1,10 @@
 import { Action } from 'redux';
 
+import {
+	isActionSetControlPoint1,
+	isActionSetControlPoint2,
+} from './actions';
+
 export interface ReducerState {
 	cp1x: number;
 	cp1y: number;
@@ -15,6 +20,22 @@ const DEFAULT_STATE: ReducerState = {
 };
 
 export default (state: ReducerState = DEFAULT_STATE, action: Action): ReducerState => {
+	if (isActionSetControlPoint1(action)) {
+		return {
+			...state,
+			cp1x: action.payload.x,
+			cp1y: action.payload.y,
+		};
+	}
+
+	if (isActionSetControlPoint2(action)) {
+		return {
+			...state,
+			cp2x: action.payload.x,
+			cp2y: action.payload.y,
+		};
+	}
+
 	return state;
 };
 
