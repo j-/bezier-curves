@@ -9,6 +9,11 @@ import {
 	getCp2y,
 } from '../store/root';
 
+import {
+	setControlPoint1,
+	setControlPoint2,
+} from '../store/actions';
+
 interface StateProps {
 	cp1x: number;
 	cp1y: number;
@@ -24,11 +29,13 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 });
 
 interface DispatchProps {
-
+	setControlPoint1: (x: number, y: number) => void;
+	setControlPoint2: (x: number, y: number) => void;
 }
 
 const mapDispatchToProps: DispatchProps = ({
-
+	setControlPoint1,
+	setControlPoint2,
 });
 
 export default connect(

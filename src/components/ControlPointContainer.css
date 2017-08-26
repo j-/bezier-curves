@@ -4,7 +4,7 @@
 	pointer-events: none;
 }
 
-.ControlPointContainer > .ControlPoint {
+.ControlPointContainer > .ControlPointContainer-drag-handle {
 	position: absolute;
 	pointer-events: all;
 }
