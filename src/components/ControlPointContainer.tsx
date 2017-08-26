@@ -26,7 +26,9 @@ export default class ControlPointContainer extends React.Component<Props> {
 					onDragCancel={this.handleDragCancel}
 					onChangeDelta={this.handleChangeDelta}
 				>
-					<ControlPoint />
+					<ControlPoint
+						onKeyDown={this.handleKeyDown}
+					/>
 				</DragHandle>
 			</div>
 		);
@@ -56,5 +58,26 @@ export default class ControlPointContainer extends React.Component<Props> {
 			this.startX + deltaX / size,
 			this.startY + -deltaY / size,
 		);
+	}
+
+	private handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+		const { x, y, updateControlPoint } = this.props;
+		const amount = e.getModifierState('Alt') ? 0.01 : 0.1;
+		switch (e.key) {
+			case 'ArrowUp':
+				updateControlPoint(x, y + amount);
+				return;
+			case 'ArrowDown':
+				updateControlPoint(x, y - amount);
+				return;
+			case 'ArrowLeft':
+				updateControlPoint(x - amount, y);
+				return;
+			case 'ArrowRight':
+				updateControlPoint(x + amount, y);
+				return;
+			default:
+				// Ignore
+		}
 	}
 }
