@@ -8,4 +8,5 @@
 	cursor: -webkit-grab;
 	cursor: grab;
 	transform: translate(-1em, -1em);
+	pointer-events: all;
 }

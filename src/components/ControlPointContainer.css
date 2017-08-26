@@ -6,5 +6,4 @@
 
 .ControlPointContainer > .ControlPointContainer-drag-handle {
 	position: absolute;
-	pointer-events: all;
 }
