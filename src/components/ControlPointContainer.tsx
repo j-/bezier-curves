@@ -62,18 +62,26 @@ export default class ControlPointContainer extends React.Component<Props> {
 
 	private handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
 		const { x, y, updateControlPoint } = this.props;
-		const amount = e.getModifierState('Alt') ? 0.01 : 0.1;
+		const amount = (
+			e.getModifierState('Shift') ? 1 :
+			e.getModifierState('Alt') ? 0.01 :
+			0.1
+		);
 		switch (e.key) {
 			case 'ArrowUp':
+				e.preventDefault();
 				updateControlPoint(x, y + amount);
 				return;
 			case 'ArrowDown':
+				e.preventDefault();
 				updateControlPoint(x, y - amount);
 				return;
 			case 'ArrowLeft':
+				e.preventDefault();
 				updateControlPoint(x - amount, y);
 				return;
 			case 'ArrowRight':
+				e.preventDefault();
 				updateControlPoint(x + amount, y);
 				return;
 			default:
