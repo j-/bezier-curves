@@ -38,6 +38,8 @@ export default class ControlPointValues extends React.Component<Props> {
 						value={cp1x}
 						onChange={this.handleChangeCp1x}
 						step={0.1}
+						min={0}
+						max={1}
 					/>
 				</div>
 				<div className="ControlPointValues-config">
@@ -70,6 +72,8 @@ export default class ControlPointValues extends React.Component<Props> {
 						value={cp2x}
 						onChange={this.handleChangeCp2x}
 						step={0.1}
+						min={0}
+						max={1}
 					/>
 				</div>
 				<div className="ControlPointValues-config">

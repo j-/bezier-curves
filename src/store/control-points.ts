@@ -19,11 +19,16 @@ const DEFAULT_STATE: ReducerState = {
 	cp2y: 1,
 };
 
+/** Restricts `value` to the range 0-1 */
+const clamp = (value: number) => (
+	Math.min(Math.max(value, 0), 1)
+);
+
 export default (state: ReducerState = DEFAULT_STATE, action: Action): ReducerState => {
 	if (isActionSetControlPoint1(action)) {
 		return {
 			...state,
-			cp1x: action.payload.x,
+			cp1x: clamp(action.payload.x),
 			cp1y: action.payload.y,
 		};
 	}
@@ -31,7 +36,7 @@ export default (state: ReducerState = DEFAULT_STATE, action: Action): ReducerSta
 	if (isActionSetControlPoint2(action)) {
 		return {
 			...state,
-			cp2x: action.payload.x,
+			cp2x: clamp(action.payload.x),
 			cp2y: action.payload.y,
 		};
 	}
