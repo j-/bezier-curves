@@ -51,6 +51,7 @@ export default class Guide extends React.Component<Props> {
 		canvas.width = size + offset * 2;
 		canvas.height = size + offset * 2;
 		ctx.save();
+		ctx.translate(0.5, 0.5);
 		ctx.beginPath();
 		ctx.setLineDash([10, 5]);
 		ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)';
