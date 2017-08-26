@@ -1,0 +1,9 @@
+.Presets {
+	font-size: 1.5em;
+}
+
+.Presets > .Presets-preset {
+	font-size: inherit;
+	margin: 0.25em;
+	padding: 0.25em;
+}

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import CurveContainer from '../containers/CurveContainer';
 import ControlPointValues from '../containers/ControlPointValues';
+import Presets from '../containers/Presets';
 import './App.css';
 
 export default class App extends React.Component {
@@ -12,6 +13,9 @@ export default class App extends React.Component {
 				</div>
 				<div className="App-control-point-values">
 					<ControlPointValues />
+				</div>
+				<div className="App-presets">
+					<Presets />
 				</div>
 			</div>
 		);

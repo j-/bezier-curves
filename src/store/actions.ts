@@ -39,3 +39,27 @@ export const setControlPoint2 = (x: number, y: number): ActionSetControlPoint2 =
 		y,
 	},
 });
+
+export interface ActionSetControlPoints extends Action {
+	type: 'SetControlPoints';
+	payload: {
+		cp1x: number;
+		cp1y: number;
+		cp2x: number;
+		cp2y: number;
+	};
+}
+
+export const isActionSetControlPoints = (action: Action): action is ActionSetControlPoints => (
+	action.type === 'SetControlPoints'
+);
+
+export const setControlPoints = (cp1x: number, cp1y: number, cp2x: number, cp2y: number): ActionSetControlPoints => ({
+	type: 'SetControlPoints',
+	payload: {
+		cp1x,
+		cp1y,
+		cp2x,
+		cp2y,
+	},
+});

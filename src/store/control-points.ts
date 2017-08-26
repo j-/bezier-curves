@@ -1,6 +1,7 @@
 import { Action } from 'redux';
 
 import {
+	isActionSetControlPoints,
 	isActionSetControlPoint1,
 	isActionSetControlPoint2,
 } from './actions';
@@ -25,6 +26,16 @@ const clamp = (value: number) => (
 );
 
 export default (state: ReducerState = DEFAULT_STATE, action: Action): ReducerState => {
+	if (isActionSetControlPoints(action)) {
+		return {
+			...state,
+			cp1x: clamp(action.payload.cp1x),
+			cp1y: action.payload.cp1y,
+			cp2x: clamp(action.payload.cp2x),
+			cp2y: action.payload.cp2y,
+		};
+	}
+
 	if (isActionSetControlPoint1(action)) {
 		return {
 			...state,
