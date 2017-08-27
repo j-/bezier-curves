@@ -17,13 +17,22 @@ export default class DragHandle extends React.Component<Props> {
 			<div
 				{...props}
 				onMouseDown={this.handleMouseDown}
+				onTouchStart={this.handleTouchStart}
 			/>
 		);
 	}
 
 	private handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+		e.preventDefault();
 		this.originalClientX = e.clientX;
 		this.originalClientY = e.clientY;
+		this.startDrag();
+	}
+
+	private handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+		e.preventDefault();
+		this.originalClientX = e.touches[0].clientX;
+		this.originalClientY = e.touches[0].clientY;
 		this.startDrag();
 	}
 
@@ -36,7 +45,21 @@ export default class DragHandle extends React.Component<Props> {
 		}
 	}
 
+	private handleTouchMove = (e: TouchEvent) => {
+		e.preventDefault();
+		if (this.props.onChangeDelta) {
+			this.props.onChangeDelta(
+				e.touches[0].clientX - this.originalClientX,
+				e.touches[0].clientY - this.originalClientY,
+			);
+		}
+	}
+
 	private handleMouseUp = (e: MouseEvent) => {
+		this.endDrag();
+	}
+
+	private handleTouchEnd = (e: TouchEvent) => {
 		this.endDrag();
 	}
 
@@ -46,16 +69,26 @@ export default class DragHandle extends React.Component<Props> {
 		}
 	}
 
+	private handleTouchCancel = (e: TouchEvent) => {
+		this.cancelDrag();
+	}
+
 	private bindHandlers () {
 		window.addEventListener('mousemove', this.handleMouseMove);
 		window.addEventListener('mouseup', this.handleMouseUp);
 		window.addEventListener('keydown', this.handleKeyDown);
+		window.addEventListener('touchmove', this.handleTouchMove);
+		window.addEventListener('touchend', this.handleTouchEnd);
+		window.addEventListener('touchcancel', this.handleTouchCancel);
 	}
 
 	private unbindHandlers () {
 		window.removeEventListener('mousemove', this.handleMouseMove);
 		window.removeEventListener('mouseup', this.handleMouseUp);
 		window.removeEventListener('keydown', this.handleKeyDown);
+		window.removeEventListener('touchmove', this.handleTouchMove);
+		window.removeEventListener('touchend', this.handleTouchEnd);
+		window.removeEventListener('touchcancel', this.handleTouchCancel);
 	}
 
 	private startDrag () {
