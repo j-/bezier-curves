@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './ControlPointValues.css';
 
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	cp1x: number;
@@ -24,73 +23,77 @@ export default class ControlPointValues extends React.Component<Props> {
 
 		return (
 			<div className="ControlPointValues" {...props}>
-				<div className="ControlPointValues-config form-group row">
-					<label
-						className="ControlPointValues-config-label"
-						htmlFor="ControlPointValues-cp1x"
-					>
-						CP1 x
-					</label>
-					<input
-						id="ControlPointValues-cp1x"
-						className="ControlPointValues-config-value form-control"
-						type="number"
-						value={cp1x}
-						onChange={this.handleChangeCp1x}
-						step={0.1}
-						min={0}
-						max={1}
-					/>
+				<div className="form-row">
+					<div className="ControlPointValues-config col-md-6 form-group">
+						<label
+							className="ControlPointValues-config-label"
+							htmlFor="ControlPointValues-cp1x"
+						>
+							CP1 x
+						</label>
+						<input
+							id="ControlPointValues-cp1x"
+							className="ControlPointValues-config-value form-control"
+							type="number"
+							value={cp1x}
+							onChange={this.handleChangeCp1x}
+							step={0.1}
+							min={0}
+							max={1}
+						/>
+					</div>
+					<div className="ControlPointValues-config col-md-6 form-group">
+						<label
+							className="ControlPointValues-config-label"
+							htmlFor="ControlPointValues-cp1y"
+						>
+							CP1 y
+						</label>
+						<input
+							id="ControlPointValues-cp1y"
+							className="ControlPointValues-config-value form-control"
+							type="number"
+							value={cp1y}
+							onChange={this.handleChangeCp1y}
+							step={0.1}
+						/>
+					</div>
 				</div>
-				<div className="ControlPointValues-config form-group row">
-					<label
-						className="ControlPointValues-config-label"
-						htmlFor="ControlPointValues-cp1y"
-					>
-						CP1 y
-					</label>
-					<input
-						id="ControlPointValues-cp1y"
-						className="ControlPointValues-config-value form-control"
-						type="number"
-						value={cp1y}
-						onChange={this.handleChangeCp1y}
-						step={0.1}
-					/>
-				</div>
-				<div className="ControlPointValues-config form-group row">
-					<label
-						className="ControlPointValues-config-label"
-						htmlFor="ControlPointValues-cp2x"
-					>
-						CP2 x
-					</label>
-					<input
-						id="ControlPointValues-cp2x"
-						className="ControlPointValues-config-value form-control"
-						type="number"
-						value={cp2x}
-						onChange={this.handleChangeCp2x}
-						step={0.1}
-						min={0}
-						max={1}
-					/>
-				</div>
-				<div className="ControlPointValues-config form-group row">
-					<label
-						className="ControlPointValues-config-label"
-						htmlFor="ControlPointValues-cp2y"
-					>
-						CP2 y
-					</label>
-					<input
-						id="ControlPointValues-cp2y"
-						className="ControlPointValues-config-value form-control"
-						type="number"
-						value={cp2y}
-						onChange={this.handleChangeCp2y}
-						step={0.1}
-					/>
+				<div className="form-row">
+					<div className="ControlPointValues-config col-md-6 form-group">
+						<label
+							className="ControlPointValues-config-label"
+							htmlFor="ControlPointValues-cp2x"
+						>
+							CP2 x
+						</label>
+						<input
+							id="ControlPointValues-cp2x"
+							className="ControlPointValues-config-value form-control"
+							type="number"
+							value={cp2x}
+							onChange={this.handleChangeCp2x}
+							step={0.1}
+							min={0}
+							max={1}
+						/>
+					</div>
+					<div className="ControlPointValues-config col-md-6 form-group">
+						<label
+							className="ControlPointValues-config-label"
+							htmlFor="ControlPointValues-cp2y"
+						>
+							CP2 y
+						</label>
+						<input
+							id="ControlPointValues-cp2y"
+							className="ControlPointValues-config-value form-control"
+							type="number"
+							value={cp2y}
+							onChange={this.handleChangeCp2y}
+							step={0.1}
+						/>
+					</div>
 				</div>
 			</div>
 		);

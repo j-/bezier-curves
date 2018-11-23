@@ -8,13 +8,15 @@ const App: React.StatelessComponent = () => (
 	<div className="App container mt-5 mb-5">
 		<h1>B&eacute;zier Curves</h1>
 
-		<div className="App-canvas-container">
+		<div className="App-canvas-container mt-5 mb-5">
 			<CurveContainer size={400} />
 		</div>
-		<div className="App-control-point-values">
+
+		<div className="App-control-point-values mt-5 mb-5">
 			<ControlPointValues />
 		</div>
-		<div className="App-presets">
+
+		<div className="App-presets mt-5 mb-5">
 			<Presets />
 		</div>
 	</div>

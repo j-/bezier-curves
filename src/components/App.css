@@ -1,10 +1,10 @@
-.App {
-	padding: 1em;
-}
-
-.App-canvas-container,
-.App-control-point-values {
+.App-canvas-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+.App-control-point-values {
+	margin: auto;
+	max-width: 25em;
 }
