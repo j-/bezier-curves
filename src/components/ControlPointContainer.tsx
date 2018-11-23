@@ -17,7 +17,13 @@ export default class ControlPointContainer extends React.Component<Props> {
 	private startY: number;
 
 	render () {
-		const { size, x, y, updateControlPoint, ...props } = this.props;
+		const {
+			size, x, y,
+			updateControlPoint,
+			mouseoverControlPoint,
+			mouseoutControlPoint,
+			...props
+		} = this.props;
 		return (
 			<div className="ControlPointContainer" {...props}>
 				<DragHandle
@@ -27,8 +33,8 @@ export default class ControlPointContainer extends React.Component<Props> {
 					onDragEnd={this.handleDragEnd}
 					onDragCancel={this.handleDragCancel}
 					onChangeDelta={this.handleChangeDelta}
-					onMouseOver={this.props.mouseoverControlPoint}
-					onMouseOut={this.props.mouseoutControlPoint}
+					onMouseOver={mouseoverControlPoint}
+					onMouseOut={mouseoutControlPoint}
 				>
 					<ControlPoint
 						onKeyDown={this.handleKeyDown}
