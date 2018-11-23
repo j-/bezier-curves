@@ -7,7 +7,7 @@ import {
 	getCp1y,
 	getCp2x,
 	getCp2y,
-} from '../store/root';
+} from '../store';
 
 import {
 	setControlPoint1,
