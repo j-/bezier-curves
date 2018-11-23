@@ -1,19 +1,19 @@
 import { Reducer } from 'redux';
-import { isActionHighlightControlPoint } from './actions';
+import { isActionHoverControlPoint } from './actions';
 
 export interface ReducerState {
-	highlighted: 1 | 2 | null;
+	hovered: 1 | 2 | null;
 }
 
 const DEFAULT_STATE: ReducerState = {
-	highlighted: null,
+	hovered: null,
 };
 
 const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
-	if (isActionHighlightControlPoint(action)) {
+	if (isActionHoverControlPoint(action)) {
 		return {
 			...state,
-			highlighted: action.payload.controlPoint,
+			hovered: action.payload.controlPoint,
 		};
 	}
 
@@ -23,13 +23,13 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 export default reducer;
 
 export const isHighlightControlPoint1 = (state: ReducerState) => (
-	state.highlighted === 1
+	state.hovered === 1
 );
 
 export const isHighlightControlPoint2 = (state: ReducerState) => (
-	state.highlighted === 2
+	state.hovered === 2
 );
 
 export const isHighlightControlPointAny = (state: ReducerState) => (
-	state.highlighted !== null
+	state.hovered !== null
 );

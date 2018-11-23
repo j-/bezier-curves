@@ -72,29 +72,29 @@ export const setControlPoints = (cp1x: number, cp1y: number, cp2x: number, cp2y:
 
 /* Highlight control point */
 
-export interface ActionHighlightControlPoint extends Action {
-	type: 'HighlightControlPoint';
+export interface ActionHoverControlPoint extends Action {
+	type: 'HoverControlPoint';
 	payload: {
 		controlPoint: 1 | 2 | null;
 	};
 }
 
-export const isActionHighlightControlPoint = (action: Action): action is ActionHighlightControlPoint => (
-	action.type === 'HighlightControlPoint'
+export const isActionHoverControlPoint = (action: Action): action is ActionHoverControlPoint => (
+	action.type === 'HoverControlPoint'
 );
 
-export const highlightControlPoint = (controlPoint: 1 | 2): ActionHighlightControlPoint => ({
-	type: 'HighlightControlPoint',
+export const hoverControlPoint = (controlPoint: 1 | 2): ActionHoverControlPoint => ({
+	type: 'HoverControlPoint',
 	payload: {
 		controlPoint,
 	},
 });
 
-export const highlightControlPoint1 = () => highlightControlPoint(1);
-export const highlightControlPoint2 = () => highlightControlPoint(2);
+export const hoverControlPoint1 = () => hoverControlPoint(1);
+export const hoverControlPoint2 = () => hoverControlPoint(2);
 
-export const removeHighlightControlPoint = (): ActionHighlightControlPoint => ({
-	type: 'HighlightControlPoint',
+export const removeHoverControlPoint = (): ActionHoverControlPoint => ({
+	type: 'HoverControlPoint',
 	payload: {
 		controlPoint: null,
 	},

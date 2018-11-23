@@ -12,9 +12,9 @@ import {
 import {
 	setControlPoint1,
 	setControlPoint2,
-	highlightControlPoint1,
-	highlightControlPoint2,
-	removeHighlightControlPoint,
+	hoverControlPoint1,
+	hoverControlPoint2,
+	removeHoverControlPoint,
 } from '../store/actions';
 
 interface StateProps {
@@ -34,17 +34,17 @@ const mapStateToProps = (state: RootReducerState): StateProps => ({
 interface DispatchProps {
 	setControlPoint1: (x: number, y: number) => void;
 	setControlPoint2: (x: number, y: number) => void;
-	highlightControlPoint1: () => void;
-	highlightControlPoint2: () => void;
-	removeHighlightControlPoint: () => void;
+	hoverControlPoint1: () => void;
+	hoverControlPoint2: () => void;
+	removeHoverControlPoint: () => void;
 }
 
 const mapDispatchToProps: DispatchProps = ({
 	setControlPoint1,
 	setControlPoint2,
-	highlightControlPoint1,
-	highlightControlPoint2,
-	removeHighlightControlPoint,
+	hoverControlPoint1,
+	hoverControlPoint2,
+	removeHoverControlPoint,
 });
 
 export default connect(
