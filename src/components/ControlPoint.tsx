@@ -5,14 +5,11 @@ export interface Props extends React.HTMLAttributes<HTMLButtonElement> {
 
 }
 
-export default class ControlPoint extends React.Component<Props> {
-	render () {
-		const { ...props } = this.props;
-		return (
-			<button
-				className="ControlPoint"
-				{...props}
-			/>
-		);
-	}
-}
+const ControlPoint: React.StatelessComponent<Props> = (props) => (
+	<button
+		className="ControlPoint"
+		{...props}
+	/>
+);
+
+export default ControlPoint;
