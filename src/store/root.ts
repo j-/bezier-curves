@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import * as controlPoints from './control-points';
+import * as controlPoints from './reducer-control-points';
 
 export interface RootReducerState {
 	controlPoints: controlPoints.ReducerState;
