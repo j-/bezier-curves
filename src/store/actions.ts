@@ -70,7 +70,7 @@ export const setControlPoints = (cp1x: number, cp1y: number, cp2x: number, cp2y:
 	},
 });
 
-/* Highlight control point */
+/* Hover control point */
 
 export interface ActionHoverControlPoint extends Action {
 	type: 'HoverControlPoint';
@@ -95,6 +95,36 @@ export const hoverControlPoint2 = () => hoverControlPoint(2);
 
 export const removeHoverControlPoint = (): ActionHoverControlPoint => ({
 	type: 'HoverControlPoint',
+	payload: {
+		controlPoint: null,
+	},
+});
+
+/* Drag control point */
+
+export interface ActionDragControlPoint extends Action {
+	type: 'DragControlPoint';
+	payload: {
+		controlPoint: 1 | 2 | null;
+	};
+}
+
+export const isActionDragControlPoint = (action: Action): action is ActionDragControlPoint => (
+	action.type === 'DragControlPoint'
+);
+
+export const dragControlPoint = (controlPoint: 1 | 2): ActionDragControlPoint => ({
+	type: 'DragControlPoint',
+	payload: {
+		controlPoint,
+	},
+});
+
+export const dragControlPoint1 = () => dragControlPoint(1);
+export const dragControlPoint2 = () => dragControlPoint(2);
+
+export const removeDragControlPoint = (): ActionDragControlPoint => ({
+	type: 'DragControlPoint',
 	payload: {
 		controlPoint: null,
 	},
