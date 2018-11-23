@@ -15,6 +15,9 @@ import {
 	hoverControlPoint1,
 	hoverControlPoint2,
 	removeHoverControlPoint,
+	dragControlPoint1,
+	dragControlPoint2,
+	removeDragControlPoint,
 } from '../store/actions';
 
 interface StateProps {
@@ -37,6 +40,9 @@ interface DispatchProps {
 	hoverControlPoint1: () => void;
 	hoverControlPoint2: () => void;
 	removeHoverControlPoint: () => void;
+	dragControlPoint1: () => void;
+	dragControlPoint2: () => void;
+	removeDragControlPoint: () => void;
 }
 
 const mapDispatchToProps: DispatchProps = ({
@@ -45,6 +51,9 @@ const mapDispatchToProps: DispatchProps = ({
 	hoverControlPoint1,
 	hoverControlPoint2,
 	removeHoverControlPoint,
+	dragControlPoint1,
+	dragControlPoint2,
+	removeDragControlPoint,
 });
 
 export default connect(

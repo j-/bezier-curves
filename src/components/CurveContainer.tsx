@@ -16,6 +16,9 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	hoverControlPoint1: () => void;
 	hoverControlPoint2: () => void;
 	removeHoverControlPoint: () => void;
+	dragControlPoint1: () => void;
+	dragControlPoint2: () => void;
+	removeDragControlPoint: () => void;
 }
 
 const OFFSET = 200;
@@ -31,6 +34,9 @@ const CurveContainer: React.StatelessComponent<Props> = ({
 	hoverControlPoint1,
 	hoverControlPoint2,
 	removeHoverControlPoint,
+	dragControlPoint1,
+	dragControlPoint2,
+	removeDragControlPoint,
 	...props
 }) => (
 	<div className="CurveContainer" style={{ width: size + 1, height: size + 1 }} {...props}>
@@ -44,6 +50,8 @@ const CurveContainer: React.StatelessComponent<Props> = ({
 			updateControlPoint={setControlPoint1}
 			mouseoverControlPoint={hoverControlPoint1}
 			mouseoutControlPoint={removeHoverControlPoint}
+			dragstartControlPoint={dragControlPoint1}
+			dragendControlPoint={removeDragControlPoint}
 		/>
 		<ControlPointContainer
 			size={size}
@@ -52,6 +60,8 @@ const CurveContainer: React.StatelessComponent<Props> = ({
 			updateControlPoint={setControlPoint2}
 			mouseoverControlPoint={hoverControlPoint2}
 			mouseoutControlPoint={removeHoverControlPoint}
+			dragstartControlPoint={dragControlPoint2}
+			dragendControlPoint={removeDragControlPoint}
 		/>
 	</div>
 );

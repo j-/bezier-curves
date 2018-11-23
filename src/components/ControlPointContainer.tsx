@@ -10,6 +10,8 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	updateControlPoint: (deltaX: number, deltaY: number) => void;
 	mouseoverControlPoint: () => void;
 	mouseoutControlPoint: () => void;
+	dragstartControlPoint: () => void;
+	dragendControlPoint: () => void;
 }
 
 export default class ControlPointContainer extends React.Component<Props> {
@@ -22,6 +24,8 @@ export default class ControlPointContainer extends React.Component<Props> {
 			updateControlPoint,
 			mouseoverControlPoint,
 			mouseoutControlPoint,
+			dragstartControlPoint,
+			dragendControlPoint,
 			...props
 		} = this.props;
 		return (
@@ -47,11 +51,13 @@ export default class ControlPointContainer extends React.Component<Props> {
 	private handleDragStart = () => {
 		this.startX = this.props.x;
 		this.startY = this.props.y;
+		this.props.dragstartControlPoint();
 	}
 
 	private handleDragEnd = () => {
 		delete this.startX;
 		delete this.startY;
+		this.props.dragendControlPoint();
 	}
 
 	private handleDragCancel = () => {
@@ -60,6 +66,7 @@ export default class ControlPointContainer extends React.Component<Props> {
 			this.startX,
 			this.startY,
 		);
+		this.props.dragendControlPoint();
 	}
 
 	private handleChangeDelta = (deltaX: number, deltaY: number) => {
