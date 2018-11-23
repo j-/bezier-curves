@@ -25,30 +25,38 @@ const clamp = (value: number) => (
 	Math.min(Math.max(value, 0), 1)
 );
 
+/** Round to the given number of decimal places (can be negative) */
+const round = (value: number, places: number) => (
+	Math.floor(value * 10 ** places) / 10 ** places
+);
+
+/** Only store control point values with this much precision */
+const CP_PRECISION = 2;
+
 export default (state: ReducerState = DEFAULT_STATE, action: Action): ReducerState => {
 	if (isActionSetControlPoints(action)) {
 		return {
 			...state,
-			cp1x: clamp(action.payload.cp1x),
-			cp1y: action.payload.cp1y,
-			cp2x: clamp(action.payload.cp2x),
-			cp2y: action.payload.cp2y,
+			cp1x: round(clamp(action.payload.cp1x), CP_PRECISION),
+			cp1y: round(action.payload.cp1y, CP_PRECISION),
+			cp2x: round(clamp(action.payload.cp2x), CP_PRECISION),
+			cp2y: round(action.payload.cp2y, CP_PRECISION),
 		};
 	}
 
 	if (isActionSetControlPoint1(action)) {
 		return {
 			...state,
-			cp1x: clamp(action.payload.x),
-			cp1y: action.payload.y,
+			cp1x: round(clamp(action.payload.x), CP_PRECISION),
+			cp1y: round(action.payload.y, CP_PRECISION),
 		};
 	}
 
 	if (isActionSetControlPoint2(action)) {
 		return {
 			...state,
-			cp2x: clamp(action.payload.x),
-			cp2y: action.payload.y,
+			cp2x: round(clamp(action.payload.x), CP_PRECISION),
+			cp2y: round(action.payload.y, CP_PRECISION),
 		};
 	}
 
