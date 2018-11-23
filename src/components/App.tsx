@@ -2,7 +2,7 @@ import * as React from 'react';
 import CurveContainer from '../containers/CurveContainer';
 import ControlPointValues from '../containers/ControlPointValues';
 import CssTimingFunction from '../containers/CssTimingFunction';
-import Presets from '../containers/Presets';
+import Presets from './Presets';
 import './App.css';
 
 const App: React.StatelessComponent = () => (

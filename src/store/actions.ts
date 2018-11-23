@@ -70,6 +70,26 @@ export const setControlPoints = (cp1x: number, cp1y: number, cp2x: number, cp2y:
 	},
 });
 
+export const setControlPointsPresetLinear = () => (
+	setControlPoints(0, 0, 1, 1)
+);
+
+export const setControlPointsPresetEase = () => (
+	setControlPoints(0.25, 0.1, 0.25, 1)
+);
+
+export const setControlPointsPresetEaseIn = () => (
+	setControlPoints(0.42, 0, 1, 1)
+);
+
+export const setControlPointsPresetEaseInOut = () => (
+	setControlPoints(0.42, 0, 0.58, 1)
+);
+
+export const setControlPointsPresetEaseOut = () => (
+	setControlPoints(0, 0, 0.58, 1)
+);
+
 /* Hover control point */
 
 export interface ActionHoverControlPoint extends Action {

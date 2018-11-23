@@ -1,60 +1,45 @@
 import * as React from 'react';
+import PresetButtonLinear from '../containers/PresetButtonLinear';
+import PresetButtonEase from '../containers/PresetButtonEase';
+import PresetButtonEaseIn from '../containers/PresetButtonEaseIn';
+import PresetButtonEaseInOut from '../containers/PresetButtonEaseInOut';
+import PresetButtonEaseOut from '../containers/PresetButtonEaseOut';
 
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
-	setControlPoints: (cp1x: number, cp1y: number, cp2x: number, cp2y: number) => void;
+
 }
 
-const Presets: React.StatelessComponent<Props> = ({ setControlPoints, ...props }) => (
+const Presets: React.StatelessComponent<Props> = (props) => (
 	<div className="Presets" {...props}>
 		<h2>Presets</h2>
 
-		<button
-			className="btn btn-light btn-lg"
-			type="button"
-			onClick={() => setControlPoints(0, 0, 1, 1)}
-		>
+		<PresetButtonLinear>
 			linear
-		</button>
+		</PresetButtonLinear>
 
 		&nbsp;
 
-		<button
-			className="btn btn-light btn-lg"
-			type="button"
-			onClick={() => setControlPoints(0.25, 0.1, 0.25, 1)}
-		>
+		<PresetButtonEase>
 			ease
-		</button>
+		</PresetButtonEase>
 
 		&nbsp;
 
-		<button
-			className="btn btn-light btn-lg"
-			type="button"
-			onClick={() => setControlPoints(0.42, 0, 1, 1)}
-		>
+		<PresetButtonEaseIn>
 			ease-in
-		</button>
+		</PresetButtonEaseIn>
 
 		&nbsp;
 
-		<button
-			className="btn btn-light btn-lg"
-			type="button"
-			onClick={() => setControlPoints(0.42, 0, 0.58, 1)}
-		>
+		<PresetButtonEaseInOut>
 			ease-in-out
-		</button>
+		</PresetButtonEaseInOut>
 
 		&nbsp;
 
-		<button
-			className="btn btn-light btn-lg"
-			type="button"
-			onClick={() => setControlPoints(0, 0, 0.58, 1)}
-		>
+		<PresetButtonEaseOut>
 			ease-out
-		</button>
+		</PresetButtonEaseOut>
 	</div>
 );
 
