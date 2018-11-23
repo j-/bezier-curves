@@ -24,7 +24,7 @@ export default class ControlPointValues extends React.Component<Props> {
 
 		return (
 			<div className="ControlPointValues" {...props}>
-				<div className="ControlPointValues-config">
+				<div className="ControlPointValues-config form-group row">
 					<label
 						className="ControlPointValues-config-label"
 						htmlFor="ControlPointValues-cp1x"
@@ -33,7 +33,7 @@ export default class ControlPointValues extends React.Component<Props> {
 					</label>
 					<input
 						id="ControlPointValues-cp1x"
-						className="ControlPointValues-config-value"
+						className="ControlPointValues-config-value form-control"
 						type="number"
 						value={cp1x}
 						onChange={this.handleChangeCp1x}
@@ -42,7 +42,7 @@ export default class ControlPointValues extends React.Component<Props> {
 						max={1}
 					/>
 				</div>
-				<div className="ControlPointValues-config">
+				<div className="ControlPointValues-config form-group row">
 					<label
 						className="ControlPointValues-config-label"
 						htmlFor="ControlPointValues-cp1y"
@@ -51,14 +51,14 @@ export default class ControlPointValues extends React.Component<Props> {
 					</label>
 					<input
 						id="ControlPointValues-cp1y"
-						className="ControlPointValues-config-value"
+						className="ControlPointValues-config-value form-control"
 						type="number"
 						value={cp1y}
 						onChange={this.handleChangeCp1y}
 						step={0.1}
 					/>
 				</div>
-				<div className="ControlPointValues-config">
+				<div className="ControlPointValues-config form-group row">
 					<label
 						className="ControlPointValues-config-label"
 						htmlFor="ControlPointValues-cp2x"
@@ -67,7 +67,7 @@ export default class ControlPointValues extends React.Component<Props> {
 					</label>
 					<input
 						id="ControlPointValues-cp2x"
-						className="ControlPointValues-config-value"
+						className="ControlPointValues-config-value form-control"
 						type="number"
 						value={cp2x}
 						onChange={this.handleChangeCp2x}
@@ -76,7 +76,7 @@ export default class ControlPointValues extends React.Component<Props> {
 						max={1}
 					/>
 				</div>
-				<div className="ControlPointValues-config">
+				<div className="ControlPointValues-config form-group row">
 					<label
 						className="ControlPointValues-config-label"
 						htmlFor="ControlPointValues-cp2y"
@@ -85,7 +85,7 @@ export default class ControlPointValues extends React.Component<Props> {
 					</label>
 					<input
 						id="ControlPointValues-cp2y"
-						className="ControlPointValues-config-value"
+						className="ControlPointValues-config-value form-control"
 						type="number"
 						value={cp2y}
 						onChange={this.handleChangeCp2y}

@@ -7,7 +7,9 @@ import './App.css';
 export default class App extends React.Component {
 	render() {
 		return (
-			<div className="App">
+			<div className="App container mt-5 mb-5">
+				<h1>B&eacute;zier Curves</h1>
+
 				<div className="App-canvas-container">
 					<CurveContainer size={400} />
 				</div>

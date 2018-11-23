@@ -13,7 +13,7 @@ export default class Presets extends React.Component<Props> {
 				<strong>Presets</strong><br />
 
 				<button
-					className="Presets-preset"
+					className="Presets-preset btn btn-light"
 					type="button"
 					onClick={() => setControlPoints(0, 0, 1, 1)}
 				>
@@ -21,7 +21,7 @@ export default class Presets extends React.Component<Props> {
 				</button>
 
 				<button
-					className="Presets-preset"
+					className="Presets-preset btn btn-light"
 					type="button"
 					onClick={() => setControlPoints(0.25, 0.1, 0.25, 1)}
 				>
@@ -29,7 +29,7 @@ export default class Presets extends React.Component<Props> {
 				</button>
 
 				<button
-					className="Presets-preset"
+					className="Presets-preset btn btn-light"
 					type="button"
 					onClick={() => setControlPoints(0.42, 0, 1, 1)}
 				>
@@ -37,7 +37,7 @@ export default class Presets extends React.Component<Props> {
 				</button>
 
 				<button
-					className="Presets-preset"
+					className="Presets-preset btn btn-light"
 					type="button"
 					onClick={() => setControlPoints(0.42, 0, 0.58, 1)}
 				>
@@ -45,7 +45,7 @@ export default class Presets extends React.Component<Props> {
 				</button>
 
 				<button
-					className="Presets-preset"
+					className="Presets-preset btn btn-light"
 					type="button"
 					onClick={() => setControlPoints(0, 0, 0.58, 1)}
 				>
