@@ -67,3 +67,7 @@ export const getCp1x = (state: ReducerState): number => state.cp1x;
 export const getCp1y = (state: ReducerState): number => state.cp1y;
 export const getCp2x = (state: ReducerState): number => state.cp2x;
 export const getCp2y = (state: ReducerState): number => state.cp2y;
+
+export const getTimingFunction = (state: ReducerState) => (
+	`cubic-bezier(${getCp1x(state)}, ${getCp1y(state)}, ${getCp2x(state)}, ${getCp2y(state)})`
+);

@@ -28,6 +28,10 @@ export const getCp2y = (state: RootReducerState): number => (
 	controlPoints.getCp2y(state.controlPoints)
 );
 
+export const getTimingFunction = (state: RootReducerState) => (
+	controlPoints.getTimingFunction(state.controlPoints)
+);
+
 export const isHighlightControlPoint1 = (state: RootReducerState) => (
 	highlightControlPoint.isHighlightControlPoint1(state.highlightControlPoint)
 );
