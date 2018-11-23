@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import CurveContainer from '../components/CurveContainer';
 
 import {
-	ReducerState,
+	RootReducerState,
 	getCp1x,
 	getCp1y,
 	getCp2x,
@@ -21,7 +21,7 @@ interface StateProps {
 	cp2y: number;
 }
 
-const mapStateToProps = (state: ReducerState): StateProps => ({
+const mapStateToProps = (state: RootReducerState): StateProps => ({
 	cp1x: getCp1x(state),
 	cp1y: getCp1y(state),
 	cp2x: getCp2x(state),
