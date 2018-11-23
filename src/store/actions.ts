@@ -69,3 +69,33 @@ export const setControlPoints = (cp1x: number, cp1y: number, cp2x: number, cp2y:
 		cp2y,
 	},
 });
+
+/* Highlight control point */
+
+export interface ActionHighlightControlPoint extends Action {
+	type: 'HighlightControlPoint';
+	payload: {
+		controlPoint: 1 | 2 | null;
+	};
+}
+
+export const isActionHighlightControlPoint = (action: Action): action is ActionHighlightControlPoint => (
+	action.type === 'HighlightControlPoint'
+);
+
+export const highlightControlPoint = (controlPoint: 1 | 2): ActionHighlightControlPoint => ({
+	type: 'HighlightControlPoint',
+	payload: {
+		controlPoint,
+	},
+});
+
+export const highlightControlPoint1 = () => highlightControlPoint(1);
+export const highlightControlPoint2 = () => highlightControlPoint(2);
+
+export const removeHighlightControlPoint = (): ActionHighlightControlPoint => ({
+	type: 'HighlightControlPoint',
+	payload: {
+		controlPoint: null,
+	},
+});

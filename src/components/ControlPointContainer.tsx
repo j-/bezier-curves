@@ -8,6 +8,8 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	x: number;
 	y: number;
 	updateControlPoint: (deltaX: number, deltaY: number) => void;
+	mouseoverControlPoint: () => void;
+	mouseoutControlPoint: () => void;
 }
 
 export default class ControlPointContainer extends React.Component<Props> {
@@ -25,6 +27,8 @@ export default class ControlPointContainer extends React.Component<Props> {
 					onDragEnd={this.handleDragEnd}
 					onDragCancel={this.handleDragCancel}
 					onChangeDelta={this.handleChangeDelta}
+					onMouseOver={this.props.mouseoverControlPoint}
+					onMouseOut={this.props.mouseoutControlPoint}
 				>
 					<ControlPoint
 						onKeyDown={this.handleKeyDown}
