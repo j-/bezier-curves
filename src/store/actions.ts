@@ -1,5 +1,7 @@
 import { Action } from 'redux';
 
+/* Set control point 1 */
+
 export interface ActionSetControlPoint1 extends Action {
 	type: 'SetControlPoint1';
 	payload: {
@@ -20,6 +22,8 @@ export const setControlPoint1 = (x: number, y: number): ActionSetControlPoint1 =
 	},
 });
 
+/* Set control point 2 */
+
 export interface ActionSetControlPoint2 extends Action {
 	type: 'SetControlPoint2';
 	payload: {
@@ -39,6 +43,8 @@ export const setControlPoint2 = (x: number, y: number): ActionSetControlPoint2 =
 		y,
 	},
 });
+
+/* Set control points */
 
 export interface ActionSetControlPoints extends Action {
 	type: 'SetControlPoints';
