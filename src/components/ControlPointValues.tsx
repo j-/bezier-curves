@@ -1,10 +1,13 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	cp1x: number;
 	cp1y: number;
+	cp1highlight: boolean;
 	cp2x: number;
 	cp2y: number;
+	cp2highlight: boolean;
 	setCp1: (x: number, y: number) => void;
 	setCp2: (x: number, y: number) => void;
 }
@@ -14,8 +17,10 @@ export default class ControlPointValues extends React.Component<Props> {
 		const {
 			cp1x,
 			cp1y,
+			cp1highlight,
 			cp2x,
 			cp2y,
+			cp2highlight,
 			setCp1,
 			setCp2,
 			...props
@@ -33,7 +38,7 @@ export default class ControlPointValues extends React.Component<Props> {
 						</label>
 						<input
 							id="ControlPointValues-cp1x"
-							className="ControlPointValues-config-value form-control"
+							className={classNames('form-control', cp1highlight && 'border-primary')}
 							type="number"
 							value={cp1x}
 							onChange={this.handleChangeCp1x}
@@ -51,7 +56,7 @@ export default class ControlPointValues extends React.Component<Props> {
 						</label>
 						<input
 							id="ControlPointValues-cp1y"
-							className="ControlPointValues-config-value form-control"
+							className={classNames('form-control', cp1highlight && 'border-primary')}
 							type="number"
 							value={cp1y}
 							onChange={this.handleChangeCp1y}
@@ -69,7 +74,7 @@ export default class ControlPointValues extends React.Component<Props> {
 						</label>
 						<input
 							id="ControlPointValues-cp2x"
-							className="ControlPointValues-config-value form-control"
+							className={classNames('form-control', cp2highlight && 'border-primary')}
 							type="number"
 							value={cp2x}
 							onChange={this.handleChangeCp2x}
@@ -87,7 +92,7 @@ export default class ControlPointValues extends React.Component<Props> {
 						</label>
 						<input
 							id="ControlPointValues-cp2y"
-							className="ControlPointValues-config-value form-control"
+							className={classNames('form-control', cp2highlight && 'border-primary')}
 							type="number"
 							value={cp2y}
 							onChange={this.handleChangeCp2y}
