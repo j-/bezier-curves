@@ -7,7 +7,7 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 const Presets: React.StatelessComponent<Props> = ({ setControlPoints, ...props }) => (
 	<div className="Presets" {...props}>
-		<strong>Presets</strong><br />
+		<h2>Presets</h2>
 
 		<button
 			className="Presets-preset btn btn-light"
