@@ -19,7 +19,7 @@ export default class ControlPointValues extends React.Component<Props> {
 			cp2y,
 			setCp1,
 			setCp2,
-			...props,
+			...props
 		} = this.props;
 
 		return (
