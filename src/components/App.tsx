@@ -7,6 +7,7 @@ import './App.css';
 
 const App: React.StatelessComponent = () => (
 	<div className="App container mt-5 mb-5">
+		<a href="https://skeoh.com/" className="text-secondary">&larr; skeoh.com</a>
 		<h1>B&eacute;zier Curves</h1>
 
 		<div className="App-canvas-container mt-5 mb-5">
